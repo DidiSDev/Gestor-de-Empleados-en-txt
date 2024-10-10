@@ -1,0 +1,90 @@
+﻿<Window x:Class="Aplicacion_DAM2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Gestión Empleados - DAM2" Height="850" Width="1200" 
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <!-- ESTILOS BOTONES DEL MENU -->
+        <Style TargetType="MenuItem">
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="Padding" Value="10,5" />
+            <Setter Property="Background" Value="LightGreen" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect ShadowDepth="3" BlurRadius="6" />
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="Background" Value="DarkSlateGray" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Window.Background>
+        <!-- IMAGEN SIN COPYRIGHT PARA FONDO-->
+        <ImageBrush ImageSource="./Diseño1.png" Stretch="UniformToFill" Opacity="0.5"/>
+    </Window.Background>
+
+    <DockPanel>
+        <!-- MENÚ -->
+        <Menu DockPanel.Dock="Top" Background="LightSteelBlue">
+            <MenuItem Header="_Archivo">
+                <MenuItem Header="Alta Datos" Click="AltaDatos_Click"/>
+                <MenuItem Header="Consulta Datos" Click="ConsultaDatos_Click"/>
+                <MenuItem Header="Actualizar Datos" Click="ActualizarDatos_Click"/>
+                <Separator />
+                <MenuItem Header="Salir" Click="Salir_Click"/>
+            </MenuItem>
+
+            <MenuItem Header="_Ayuda">
+                <MenuItem Header="Ver Ayuda" Click="VerAyuda_Click"/>
+                <MenuItem Header="Acerca de" Click="AcercaDe_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <Grid>
+
+            <Border Background="White" Opacity="0.8" Padding="20" CornerRadius="10"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-500,0,0">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <!-- LOGO SIN COPYRIGHT -->
+                    <Image Source="./logo.jpg" Width="200" Height="200" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+            <Border Background="Aquamarine" Opacity="0.8" Padding="20" CornerRadius="10" 
+                    HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,50,0,0">
+               
+                <!-- DIEGO RECUERDA, EL NAME ES EL MISMO QUE PONDRÁS EN LOS TRIGGER COMO NOMBRE StoryBoard.TargeName SI NO NO EJECUTA -->
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock x:Name="Bienvenido" 
+                               Text="Bienvenido al Gestor de Empleados"
+                               FontSize="64" FontWeight="ExtraBold" Foreground="Black"
+                               HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                   
+                </StackPanel>
+            </Border>
+        </Grid>
+    </DockPanel>
+
+    <!-- EVENTO TRIGGER PARA ANIMACIONES -->
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <!-- ANIMACIÓN DE REDUCCIÓN DE OPACIDAD DESPACIO -->
+                    <DoubleAnimation Storyboard.TargetName="Bienvenido"
+                                     Storyboard.TargetProperty="Opacity"
+                                     From="0" To="1" Duration="0:0:3" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
+</Window>

@@ -1,0 +1,199 @@
+﻿<Window x:Class="Aplicacion_DAM2.AltaDatos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Alta de Datos Laborales" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+
+    <Window.Background>
+        <SolidColorBrush Color="#F0F0F0"/>
+    </Window.Background>
+
+    <Grid Margin="30">
+        <!-- DEFINO LAS FILAS, EN ESTE CASO HABRA 2, EN LA DE ABAJO OTROS DOS PANELES, IZQ Y DCHO -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- ARRIBHA -->
+            <RowDefinition Height="Auto"/>
+            <!-- JSEPARATOR -->
+            <RowDefinition Height="*"/>
+            <!-- PARTE DE ABAJO -->
+        </Grid.RowDefinitions>
+
+        <!-- AL DE ARRIBA SIMPLEMENTE ALGO DE MARGENES -->
+        <Grid Grid.Row="0" Margin="0,30,50,30">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- PANEL DE EMPLEADO Y NOMBRE DE ARRIBA -->
+            <StackPanel Grid.Column="0" HorizontalAlignment="Left">
+                <TextBlock Text="Nº EMPLEADO: X" FontSize="30" FontWeight="Bold" Foreground="Gray"/>
+                <!-- IMPORTANTE PARA ESTUDIAR: GOTFOCUS Y LOSTFOCUS, HACE QUE AL HACER CLICK PUEDA PROGRAMAR ALGO EN BACKEND Y AL PERDER EL FOCUS SOBRE
+                LA CAJA VUELVA A DEJAR "Escribe el nombre..." PARA QUE ASÍ QUEDE MÁS PROFESIONAL-->
+                <TextBox Name="txtNombreEmpleado" Text="Escribe el nombre..." FontSize="28" Foreground="LightGray" Margin="0,10,0,20"  
+                         GotFocus="TxtNombreEmpleado_GotFocus" LostFocus="TxtNombreEmpleado_LostFocus"
+                         />
+            </StackPanel>
+
+            <!-- PANEL DE ARRIBA TITULO+EMPLEADO -->
+            <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Orientation="Horizontal">
+                <TextBlock Text="ALTA DE DATOS LABORALES" FontSize="32" FontWeight="Bold" Height="44" Width="427"/>
+                <Image Source="./logo.jpg" Width="100" Height="100" Margin="30,0,0,0"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- RECTANGLE ES EL NOMBRE DEL ATRIBUTO SEPARADOR -->
+        <Rectangle Grid.Row="1" Fill="Gray" Height="3" Width="Auto" HorizontalAlignment="Stretch" />
+
+        <!-- PANEL IZQUIERDO Y DERECHO DE ABAJO -->
+        <Grid Grid.Row="2" Margin="0,30,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- CODIGO EMPLEADO Y DATOS LABORALEES -->
+            <StackPanel Grid.Column="0" VerticalAlignment="Top">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <TextBlock HorizontalAlignment="Center" Text="Código Empleado:" FontWeight="Bold" FontSize="22" Margin="30,20,0,10" Grid.Column="0"/>
+                    <TextBox HorizontalAlignment="Left" x:Name="txtCodigoEmpleado" FontSize="20" Height="40" Grid.Column="1" Margin="20,10,0,10" Width="300"/>
+                </Grid>
+
+                <!-- DATOS LABORALES, VA DENTRO DE GROUPBOX -->
+                <GroupBox Header="DATOS LABORALES" FontWeight="Bold" FontSize="22" BorderBrush="Gray" Padding="30" Margin="30,40,30,40">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- ALTA -->
+                        <TextBlock Text="Alta:" Grid.Row="0" Grid.Column="0" Margin="10" VerticalAlignment="Center" FontSize="18"/>
+                        <DatePicker x:Name="dpAlta" Grid.Row="0" Grid.Column="1" Margin="20"/>
+
+                        <!-- ANTIGÜEDAD -->
+                        <TextBlock Text="Antigüedad:" Grid.Row="1" Grid.Column="0" Margin="10" VerticalAlignment="Center" FontSize="18"/>
+                        <TextBox x:Name="txtAntiguedad" Grid.Row="1" Grid.Column="1" Margin="20" Height="40"/>
+
+                        <!-- TIEMPO COMPLETO -->
+                        <TextBlock Text="Tiempo Completo:" Grid.Row="2" Grid.Column="0" Margin="10" VerticalAlignment="Center" FontSize="18"/>
+                        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Margin="20,10,0,5" VerticalAlignment="Center">
+                            <RadioButton x:Name="RadioButtonYes" Content="Sí" GroupName="tiempoCompleto" FontSize="16"/>
+                            <RadioButton Name="RadioButtonNo" Content="No" GroupName="tiempoCompleto" Margin="20,0,0,0" FontSize="16"/>
+                        </StackPanel>
+
+                        <!-- ESPECIALIUDAD -->
+                        <TextBlock Text="Especialidad:" Grid.Row="3" Grid.Column="0" Margin="10" VerticalAlignment="Center" FontSize="18"/>
+                        <TextBox x:Name="txtEspecialidad" Grid.Row="3" Grid.Column="1" Margin="20" Height="40"/>
+
+                        <!-- TITULACIÓNM -->
+                        <TextBlock Text="Titulación:" Grid.Row="4" Grid.Column="0" Margin="10" VerticalAlignment="Center" FontSize="18"/>
+                        <TextBox x:Name="txtTitulacion" Grid.Row="4" Grid.Column="1" Margin="20" Height="40"/>
+
+                        <!-- CATEGORÍA L -->
+                        <TextBlock Text="Categoría L:" Grid.Row="5" Grid.Column="0" Margin="10" VerticalAlignment="Center" FontSize="18"/>
+                        <TextBox x:Name="txtCategoriaL" Grid.Row="5" Grid.Column="1" Margin="20" Height="40"/>
+                    </Grid>
+                </GroupBox>
+            </StackPanel>
+
+            <!-- PANEL DERECHO CON TODO -->
+            <StackPanel Grid.Column="1" VerticalAlignment="top" HorizontalAlignment="Center">
+                <!-- GroupBox NÓMINA -->
+                <GroupBox Header="DATOS NÓMINA" FontWeight="Bold" FontSize="22" BorderBrush="Gray" Padding="30" Margin="30,0,30,40">
+                    <Grid HorizontalAlignment="Left" Width="881">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <!--SALARIO PORCENTAJE Y SUS CAJAS DE TEXTO -->
+                        <TextBlock Text="Salario:" Grid.Row="0" Grid.Column="0" Margin="20" VerticalAlignment="Center" FontSize="18"/>
+                        <TextBox x:Name="txtSalario" Grid.Row="0" Margin="88,20,27,20" Height="40" Grid.ColumnSpan="3" Width="300"/>
+                        <TextBlock Text="%" Grid.Column="3" Margin="25,0,9,0" VerticalAlignment="Center" FontSize="18"/>
+                        <TextBox x:Name="txtPorcentaje" Grid.Row="0" Grid.Column="3" Margin="55,20,-332,20" Height="40"/>
+                    </Grid>
+                </GroupBox>
+                <Grid Width="948">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="150"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- DEPARTAMENTO Y GRADO -->
+                    <TextBlock Text="departamento:" Grid.Column="0" FontStyle="Italic" VerticalAlignment="Center" Margin="50,0,140,0" FontSize="18" Grid.ColumnSpan="2"/>
+                    <ComboBox x:Name="cbDepartamento" Grid.Row="1" Grid.Column="0" Width="350" Margin="50,20,140,20" Grid.ColumnSpan="2">
+                        <ComboBoxItem Content="Departamento 1"/>
+                        <ComboBoxItem Content="Departamento 2"/>
+                        <ComboBoxItem Content="Departamento 3"/>
+                    </ComboBox>
+
+                    <!-- GRADO -->
+                    <TextBlock Text="grado:" Grid.Column="3" FontStyle="Italic" VerticalAlignment="Center" Margin="50,0,50,0" FontSize="18"/>
+                    <ComboBox   x:Name="cbGrado" Grid.Row="1" Margin="29,15,-248,25" Grid.Column="3">
+                        <ComboBoxItem Content="Grado A"/>
+                        <ComboBoxItem Content="Grado B"/>
+                        <ComboBoxItem Content="Grado C"/>
+                    </ComboBox>
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="182" Width="574">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock HorizontalAlignment="Left" Text="Comentarios:" Grid.Row="0" Grid.Column="0" FontWeight="Bold" Margin="48,50,0,0" VerticalAlignment="Top" FontSize="18" Width="112" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="txtComentarios" Grid.Row="0" AcceptsReturn="True" Margin="197,50,-443,19" Grid.ColumnSpan="2"/>
+                </Grid>
+
+                 
+
+                <!-- COMENTARIOS Y SU TEXTAREA -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="Premios:" Grid.Row="0" Grid.Column="0" FontWeight="Bold" Margin="50" VerticalAlignment="Center" FontSize="18"/>
+                    <TextBox x:Name="txtPremios" Grid.Row="0" Grid.Column="1" Margin="20,42,0,42" Height="40" Width="820" HorizontalAlignment="Left"/>
+                </Grid>
+                <Button Content="GUARDAR DATOS" Width="250" Height="60" Background="LightCoral" Foreground="White" FontWeight="Bold" Click="GuardarDatos_Click"
+                        />
+
+                <!--PREMIOS Y TEXTBOX -->
+
+                <!-- BOTON GUARDAR -->
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

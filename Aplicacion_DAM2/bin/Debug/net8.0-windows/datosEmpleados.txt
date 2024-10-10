@@ -1,0 +1,15 @@
+Código Empleado: 1
+Nombre: Diego
+Alta: 09/10/2024
+Antigüedad: qwe
+Tiempo Completo: Sí
+Especialidad: qwe
+Titulación: qwe
+Categoría L: qwe
+Salario: 1233
+Porcentaje: 22
+Departamento: Departamento 1
+Grado: Grado C
+Comentarios: qwe
+Premios: qwe
+-------------------------
