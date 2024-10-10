@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dilia\\Desktop\\Aplicacion_DAM2\\Aplicacion_DAM2\\Aplicacion_DAM2.csproj": {}
+    "C:\\Users\\Alumno\\Desktop\\GESTOR_EMPLEADOS\\Gestor-de-Empleados-en-txt\\Aplicacion_DAM2\\Aplicacion_DAM2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dilia\\Desktop\\Aplicacion_DAM2\\Aplicacion_DAM2\\Aplicacion_DAM2.csproj": {
+    "C:\\Users\\Alumno\\Desktop\\GESTOR_EMPLEADOS\\Gestor-de-Empleados-en-txt\\Aplicacion_DAM2\\Aplicacion_DAM2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dilia\\Desktop\\Aplicacion_DAM2\\Aplicacion_DAM2\\Aplicacion_DAM2.csproj",
+        "projectUniqueName": "C:\\Users\\Alumno\\Desktop\\GESTOR_EMPLEADOS\\Gestor-de-Empleados-en-txt\\Aplicacion_DAM2\\Aplicacion_DAM2.csproj",
         "projectName": "Aplicacion_DAM2",
-        "projectPath": "C:\\Users\\dilia\\Desktop\\Aplicacion_DAM2\\Aplicacion_DAM2\\Aplicacion_DAM2.csproj",
-        "packagesPath": "C:\\Users\\dilia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dilia\\Desktop\\Aplicacion_DAM2\\Aplicacion_DAM2\\obj\\",
+        "projectPath": "C:\\Users\\Alumno\\Desktop\\GESTOR_EMPLEADOS\\Gestor-de-Empleados-en-txt\\Aplicacion_DAM2\\Aplicacion_DAM2.csproj",
+        "packagesPath": "C:\\Users\\Alumno\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Alumno\\Desktop\\GESTOR_EMPLEADOS\\Gestor-de-Empleados-en-txt\\Aplicacion_DAM2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\dilia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Alumno\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {}
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0-windows7.0": {

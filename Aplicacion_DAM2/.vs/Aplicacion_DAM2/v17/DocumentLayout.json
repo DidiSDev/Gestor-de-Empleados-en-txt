@@ -1,38 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\dilia\\Desktop\\Aplicacion_DAM2\\Aplicacion_DAM2\\",
+  "WorkspaceRootPath": "C:\\Users\\Alumno\\Desktop\\GESTOR_EMPLEADOS\\Gestor-de-Empleados-en-txt\\Aplicacion_DAM2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|c:\\users\\dilia\\desktop\\aplicacion_dam2\\aplicacion_dam2\\consultadatos.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|solutionrelative:consultadatos.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|c:\\users\\dilia\\desktop\\aplicacion_dam2\\aplicacion_dam2\\consultadatos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|solutionrelative:consultadatos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|c:\\users\\dilia\\desktop\\aplicacion_dam2\\aplicacion_dam2\\altadatos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|solutionrelative:altadatos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|c:\\users\\dilia\\desktop\\aplicacion_dam2\\aplicacion_dam2\\altadatos.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|solutionrelative:altadatos.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|c:\\users\\dilia\\desktop\\aplicacion_dam2\\aplicacion_dam2\\actualizardatos.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|solutionrelative:actualizardatos.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|c:\\users\\dilia\\desktop\\aplicacion_dam2\\aplicacion_dam2\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|c:\\users\\alumno\\desktop\\gestor_empleados\\gestor-de-empleados-en-txt\\aplicacion_dam2\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|c:\\users\\dilia\\desktop\\aplicacion_dam2\\aplicacion_dam2\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|c:\\users\\alumno\\desktop\\gestor_empleados\\gestor-de-empleados-en-txt\\aplicacion_dam2\\consultadatos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|solutionrelative:consultadatos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|c:\\users\\dilia\\desktop\\aplicacion_dam2\\aplicacion_dam2\\actualizardatos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|c:\\users\\alumno\\desktop\\gestor_empleados\\gestor-de-empleados-en-txt\\aplicacion_dam2\\altadatos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|solutionrelative:altadatos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|c:\\users\\alumno\\desktop\\gestor_empleados\\gestor-de-empleados-en-txt\\aplicacion_dam2\\altadatos.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|solutionrelative:altadatos.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|c:\\users\\alumno\\desktop\\gestor_empleados\\gestor-de-empleados-en-txt\\aplicacion_dam2\\consultadatos.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|solutionrelative:consultadatos.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|c:\\users\\alumno\\desktop\\gestor_empleados\\gestor-de-empleados-en-txt\\aplicacion_dam2\\actualizardatos.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|solutionrelative:actualizardatos.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|c:\\users\\alumno\\desktop\\gestor_empleados\\gestor-de-empleados-en-txt\\aplicacion_dam2\\actualizardatos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|solutionrelative:actualizardatos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|c:\\users\\alumno\\desktop\\gestor_empleados\\gestor-de-empleados-en-txt\\aplicacion_dam2\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,15 +42,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\dilia\\Desktop\\Aplicacion_DAM2\\Aplicacion_DAM2\\MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\GESTOR_EMPLEADOS\\Gestor-de-Empleados-en-txt\\Aplicacion_DAM2\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "C:\\Users\\dilia\\Desktop\\Aplicacion_DAM2\\Aplicacion_DAM2\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\GESTOR_EMPLEADOS\\Gestor-de-Empleados-en-txt\\Aplicacion_DAM2\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-10-10T08:11:25.444Z",
@@ -58,24 +58,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\dilia\\Desktop\\Aplicacion_DAM2\\Aplicacion_DAM2\\MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\GESTOR_EMPLEADOS\\Gestor-de-Empleados-en-txt\\Aplicacion_DAM2\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\dilia\\Desktop\\Aplicacion_DAM2\\Aplicacion_DAM2\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\GESTOR_EMPLEADOS\\Gestor-de-Empleados-en-txt\\Aplicacion_DAM2\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAWwBQAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T08:11:23.775Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-10T08:11:23.775Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "AltaDatos.xaml",
-              "DocumentMoniker": "C:\\Users\\dilia\\Desktop\\Aplicacion_DAM2\\Aplicacion_DAM2\\AltaDatos.xaml",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\GESTOR_EMPLEADOS\\Gestor-de-Empleados-en-txt\\Aplicacion_DAM2\\AltaDatos.xaml",
               "RelativeDocumentMoniker": "AltaDatos.xaml",
-              "ToolTip": "C:\\Users\\dilia\\Desktop\\Aplicacion_DAM2\\Aplicacion_DAM2\\AltaDatos.xaml",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\GESTOR_EMPLEADOS\\Gestor-de-Empleados-en-txt\\Aplicacion_DAM2\\AltaDatos.xaml",
               "RelativeToolTip": "AltaDatos.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-10-10T08:15:08.997Z",
@@ -85,9 +84,9 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "AltaDatos.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\dilia\\Desktop\\Aplicacion_DAM2\\Aplicacion_DAM2\\AltaDatos.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\GESTOR_EMPLEADOS\\Gestor-de-Empleados-en-txt\\Aplicacion_DAM2\\AltaDatos.xaml.cs",
               "RelativeDocumentMoniker": "AltaDatos.xaml.cs",
-              "ToolTip": "C:\\Users\\dilia\\Desktop\\Aplicacion_DAM2\\Aplicacion_DAM2\\AltaDatos.xaml.cs",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\GESTOR_EMPLEADOS\\Gestor-de-Empleados-en-txt\\Aplicacion_DAM2\\AltaDatos.xaml.cs",
               "RelativeToolTip": "AltaDatos.xaml.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAiwA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -98,9 +97,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "ConsultaDatos.xaml",
-              "DocumentMoniker": "C:\\Users\\dilia\\Desktop\\Aplicacion_DAM2\\Aplicacion_DAM2\\ConsultaDatos.xaml",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\GESTOR_EMPLEADOS\\Gestor-de-Empleados-en-txt\\Aplicacion_DAM2\\ConsultaDatos.xaml",
               "RelativeDocumentMoniker": "ConsultaDatos.xaml",
-              "ToolTip": "C:\\Users\\dilia\\Desktop\\Aplicacion_DAM2\\Aplicacion_DAM2\\ConsultaDatos.xaml",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\GESTOR_EMPLEADOS\\Gestor-de-Empleados-en-txt\\Aplicacion_DAM2\\ConsultaDatos.xaml",
               "RelativeToolTip": "ConsultaDatos.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-10-10T08:16:50.476Z",
@@ -108,41 +107,38 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ConsultaDatos.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\dilia\\Desktop\\Aplicacion_DAM2\\Aplicacion_DAM2\\ConsultaDatos.xaml.cs",
-              "RelativeDocumentMoniker": "ConsultaDatos.xaml.cs",
-              "ToolTip": "C:\\Users\\dilia\\Desktop\\Aplicacion_DAM2\\Aplicacion_DAM2\\ConsultaDatos.xaml.cs",
-              "RelativeToolTip": "ConsultaDatos.xaml.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAKwAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T08:17:02.641Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ActualizarDatos.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\dilia\\Desktop\\Aplicacion_DAM2\\Aplicacion_DAM2\\ActualizarDatos.xaml.cs",
-              "RelativeDocumentMoniker": "ActualizarDatos.xaml.cs",
-              "ToolTip": "C:\\Users\\dilia\\Desktop\\Aplicacion_DAM2\\Aplicacion_DAM2\\ActualizarDatos.xaml.cs",
-              "RelativeToolTip": "ActualizarDatos.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "ConsultaDatos.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\GESTOR_EMPLEADOS\\Gestor-de-Empleados-en-txt\\Aplicacion_DAM2\\ConsultaDatos.xaml.cs",
+              "RelativeDocumentMoniker": "ConsultaDatos.xaml.cs",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\GESTOR_EMPLEADOS\\Gestor-de-Empleados-en-txt\\Aplicacion_DAM2\\ConsultaDatos.xaml.cs",
+              "RelativeToolTip": "ConsultaDatos.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T08:17:19.472Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-10T08:17:02.641Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
+              "Title": "ActualizarDatos.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\GESTOR_EMPLEADOS\\Gestor-de-Empleados-en-txt\\Aplicacion_DAM2\\ActualizarDatos.xaml.cs",
+              "RelativeDocumentMoniker": "ActualizarDatos.xaml.cs",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\GESTOR_EMPLEADOS\\Gestor-de-Empleados-en-txt\\Aplicacion_DAM2\\ActualizarDatos.xaml.cs",
+              "RelativeToolTip": "ActualizarDatos.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T08:17:19.472Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "ActualizarDatos.xaml",
-              "DocumentMoniker": "C:\\Users\\dilia\\Desktop\\Aplicacion_DAM2\\Aplicacion_DAM2\\ActualizarDatos.xaml",
+              "DocumentMoniker": "C:\\Users\\Alumno\\Desktop\\GESTOR_EMPLEADOS\\Gestor-de-Empleados-en-txt\\Aplicacion_DAM2\\ActualizarDatos.xaml",
               "RelativeDocumentMoniker": "ActualizarDatos.xaml",
-              "ToolTip": "C:\\Users\\dilia\\Desktop\\Aplicacion_DAM2\\Aplicacion_DAM2\\ActualizarDatos.xaml",
+              "ToolTip": "C:\\Users\\Alumno\\Desktop\\GESTOR_EMPLEADOS\\Gestor-de-Empleados-en-txt\\Aplicacion_DAM2\\ActualizarDatos.xaml",
               "RelativeToolTip": "ActualizarDatos.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-10T08:17:14.994Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-10T08:17:14.994Z"
             }
           ]
         }
