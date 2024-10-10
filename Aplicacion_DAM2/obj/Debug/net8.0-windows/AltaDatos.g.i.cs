@@ -172,7 +172,7 @@ namespace Aplicacion_DAM2 {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Aplicacion_DAM2;component/altadatos.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Aplicacion_DAM2;V1.0.0.0;component/altadatos.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\AltaDatos.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

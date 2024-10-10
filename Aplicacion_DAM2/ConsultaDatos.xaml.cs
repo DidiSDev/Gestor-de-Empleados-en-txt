@@ -24,8 +24,49 @@ namespace Aplicacion_DAM2
             InitializeComponent();
         }
 
+        public void deshabilitarCampos()
+        {
+            //MÉTODO PARA DESHABILITAR LOS CAMPOS QUE SEA LLAMADO TRAS SER RELLENADOS DEL FICHERO, SI NO NOS E RELLENAN
+            
+            txtNombreEmpleado.IsEnabled = false;
+            txtCodigoEmpleado.IsEnabled = false;
+            dpAlta.IsEnabled = false;
+            txtAntiguedad.IsEnabled = false;
+            RadioButtonNo.IsEnabled = false;
+            RadioButtonYes.IsEnabled = false;
+            txtEspecialidad.IsEnabled = false;
+            txtTitulacion.IsEnabled = false;
+            txtCategoriaL.IsEnabled = false;
+            txtSalario.IsEnabled = false;
+            txtPorcentaje.IsEnabled = false;
+            cbDepartamento.IsEnabled = false;
+            cbGrado.IsEnabled = false;
+            txtComentarios.IsEnabled = false;
+            txtPremios.IsEnabled = false;
+            txtTotalNomina.IsEnabled = false; //AÚN NO SÉ QUÉ DEBE IR EN TOTAL...
+
+            /*TENGO QUE DESHABILITAR TODOS ESTOS CAMPOS
+             * 
+             * txtNombreEmpleado.Text = "";
+            txtCodigoEmpleado.Text = "";
+            dpAlta.SelectedDate = null;
+            txtAntiguedad.Text = "";
+            RadioButtonYes.IsChecked = false;
+            RadioButtonNo.IsChecked = false;
+            txtEspecialidad.Text = "";
+            txtTitulacion.Text = "";
+            txtCategoriaL.Text = "";
+            txtSalario.Text = "";
+            txtPorcentaje.Text = "";
+            cbDepartamento.SelectedIndex = -1;
+            cbGrado.SelectedIndex = -1;
+            txtComentarios.Text = "";
+            txtPremios.Text = "";*/
+        }
+
         // AL DAR AL BOTÓN BUSCAR SE EJECUTA LA LECTURA DEL FICHERO Y LA IMPLANTACIÓN DE LOS TEXTOS SEGÚN LOS DATOS RECOGIDOS PARA EL CODIGO DE EMPLEADO: X ELEGIDO
         //POR EL USUARIO
+
         private void BuscarDatos_Click(object sender, RoutedEventArgs e)
         {
             string idEmpleado = txtBuscarID.Text;
@@ -159,6 +200,8 @@ namespace Aplicacion_DAM2
                     txtTotalNomina.Text = ObtenerValor(linea);
                 }
             }
+
+            deshabilitarCampos();
         }
 
         // MODULARIZAMOS EL SPLIT PORQUE SI NO LO TENGO QUE HACER 80 VECES

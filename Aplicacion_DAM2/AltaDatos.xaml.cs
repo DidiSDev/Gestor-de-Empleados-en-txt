@@ -28,6 +28,7 @@ namespace Aplicacion_DAM2
         {
             InitializeComponent();
             GenerarCodigoEmpleado();
+            
         }
 
        
@@ -116,7 +117,7 @@ namespace Aplicacion_DAM2
             txtCodigoEmpleado.IsEnabled = false;
         }
 
-
+        
         private void LimpiarFormulario()
         {
             txtNombreEmpleado.Text = "";
