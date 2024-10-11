@@ -28,7 +28,7 @@
 
             <!-- PANEL DE EMPLEADO Y NOMBRE DE ARRIBA -->
             <StackPanel Grid.Column="0" HorizontalAlignment="Left">
-                <TextBlock Text="Nº EMPLEADO: X" FontSize="22.5" FontWeight="Bold" Foreground="Gray"/>
+                <TextBlock Text="NOMBRE EMPLEADO" FontSize="22.5" FontWeight="Bold" Foreground="Gray"/>
                 <TextBox Name="txtNombreEmpleado" Text="Escribe el nombre..." FontSize="21" Foreground="LightGray" Margin="0,7.5,0,15"
                          GotFocus="TxtNombreEmpleado_GotFocus" LostFocus="TxtNombreEmpleado_LostFocus" />
             </StackPanel>

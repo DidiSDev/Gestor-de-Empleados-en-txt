@@ -1,0 +1,59 @@
+﻿<Window x:Class="Aplicacion_DAM2.Ayuda"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ayuda" Height="600" Width="800"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- TITULO PANEL ARRIBA -->
+        <TextBlock Text="AYUDA" FontSize="36" FontWeight="Bold" Foreground="Black" 
+                   HorizontalAlignment="Center" Margin="0,20,0,10" Grid.Row="0" />
+
+        <!-- IMAGEN  +COSAS DEL MENÚ DERECHA -->
+        <Grid Grid.Row="1" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- IMAGEN A IZQUIERDA -->
+            <Image Source="Ayuda.JPG" Width="200" Height="200" Grid.Column="0" Margin="0,0,20,0"/>
+
+            <!-- EN LA COLUMNA 1 DEL GRID YA METEMOS TODO EL TEXTO DE DERECHA DE IMAGEN, DENTRO DE UN STACKPANEL
+            HACEMOS LOS MÁRGENES MANUALMENTE A 30 DESDE LA IZQ Y 50 DESDE LA IZQ PARA QUE QUEDE IGUAL QUE LA RÚBRICA-->
+            <StackPanel Grid.Column="1">
+                <TextBlock Text="En el menú de inicio tenemos dos submenús:" FontSize="18" FontWeight="Bold" Foreground="Red" Margin="0,0,0,10"/>
+                <TextBlock FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Margin="30,0,0,0">
+                    - Archivo
+                </TextBlock>
+                <TextBlock FontSize="16" TextWrapping="Wrap" Margin="50,0,0,0">
+                    - Alta Datos: Permite añadir nuevos empleados. El ID se genera automáticamente.
+                </TextBlock>
+                <TextBlock FontSize="16" TextWrapping="Wrap" Margin="50,0,0,0">
+                    - Consulta Datos: Consultar datos de cada empleado.
+                </TextBlock>
+                <TextBlock FontSize="16" TextWrapping="Wrap" Margin="50,0,0,0">
+                    - Actualizar Datos: Actualiza datos del empleado indicado.
+                </TextBlock>
+                <TextBlock FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Margin="30,0,0,0">
+                    - Ayuda
+                </TextBlock>
+            </StackPanel>
+        </Grid>
+
+        <!-- EL TEXTO DE ABAJO IRÁ EN LA FILA GRID 2 -->
+        <StackPanel Grid.Row="1" Margin="20,181,20,79" Grid.RowSpan="2">
+            <TextBlock Text="Tanto en la opción 'Consulta Datos' como en la opción 'Actualizar Datos', para poder ver/modificar los empleados se debe indicar el ID, número único e irrepetible asignado a cada empleado mediante un contador acumulativo." 
+                       FontSize="16" TextWrapping="Wrap" Margin="0,20,0,0"/>
+            <TextBlock Text="En cuanto a la creación del fichero donde se almacenan los datos, cada vez que se inicia la aplicación se crea un nuevo fichero 'empleados.txt'."
+                       FontSize="16" TextWrapping="Wrap" Margin="0,0,0,0"/>
+        </StackPanel>
+    </Grid>
+</Window>

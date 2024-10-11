@@ -31,35 +31,43 @@ namespace Aplicacion_DAM2
             
         }
 
-       
-      
+
+
 
         private void GuardarDatos_Click(object sender, RoutedEventArgs e)
         {
+            //VOY A VALIDAR QUE SE ESCRIBA CODIGO (QUE LO HACE SÓLO), NOMBRE, SALARIO, IMPORTANTÍSIMO LA FECHA, PORQUE SINO DA ERROR EN LA CONSULTA DE DATOS SI NO HA SIDO INTRODUCIDA
             if (string.IsNullOrWhiteSpace(txtCodigoEmpleado.Text) ||
-        string.IsNullOrWhiteSpace(txtNombreEmpleado.Text) || // OBLIGATORIO NOMBRE DE EMPLEADO Y SALARIO, EL CODIGO TAMBIEN PERO SE PONE SÓLO, AÚN ASÍ LO VALIDAM,OS
-        string.IsNullOrWhiteSpace(txtSalario.Text))
+                string.IsNullOrWhiteSpace(txtNombreEmpleado.Text) ||
+                string.IsNullOrWhiteSpace(txtSalario.Text) ||
+                !dpAlta.SelectedDate.HasValue ||  // ESTO ES NUEVO DIEGO: .SelectedDate.HasValue (PREGUNTA SI TIENE VALOR LA FECHA SELECCIONADA, EN CASO DE Q NO, ERROR
+                string.IsNullOrWhiteSpace(txtAntiguedad.Text) ||
+                cbDepartamento.SelectedIndex == -1 || 
+                cbGrado.SelectedIndex == -1 ||     
+                string.IsNullOrWhiteSpace(txtEspecialidad.Text))
             {
-                MessageBox.Show("¡Error, es obligatorio rellenar Código, Nombre y Salario!");
+                MessageBox.Show("¡Error! Los siguientes campos son obligatorios: Código, Nombre, Salario, Fecha de Alta, Antigüedad, Departamento, Grado, y Especialidad.");
                 return;
             }
 
+            // MODIFICO LA CADENA DE DATOS PARA GUARDAR LOS QUE SON/NO OBLIGATORIOS
             string datosEmpleado = $"Código Empleado: {txtCodigoEmpleado.Text}\n" +
-                           $"Nombre: {txtNombreEmpleado.Text}\n" +  // Guardar el nombre
-                           $"Alta: {dpAlta.SelectedDate?.ToString("d") ?? "No especificado"}\n" +
-                           $"Antigüedad: {txtAntiguedad.Text ?? "No especificado"}\n" +
-                           $"Tiempo Completo: {(RadioButtonYes.IsChecked == true ? "Sí" : "No")}\n" +
-                           $"Especialidad: {txtEspecialidad.Text ?? "No especificado"}\n" +
-                           $"Titulación: {txtTitulacion.Text ?? "No especificado"}\n" +
-                           $"Categoría L: {txtCategoriaL.Text ?? "No especificado"}\n" +
-                           $"Salario: {txtSalario.Text ?? "No especificado"}\n" +
-                           $"Porcentaje: {txtPorcentaje.Text ?? "No especificado"}\n" +
-                           $"Departamento: {cbDepartamento.Text ?? "No especificado"}\n" +
-                           $"Grado: {cbGrado.Text ?? "No especificado"}\n" +
-                           $"Comentarios: {txtComentarios.Text ?? "Sin comentarios"}\n" +
-                           $"Premios: {txtPremios.Text ?? "Ninguno"}\n" +
-                           $"-------------------------";
+                                   $"Nombre: {txtNombreEmpleado.Text}\n" +
+                                   $"Alta: {dpAlta.SelectedDate?.ToString("d") ?? "No especificado"}\n" +
+                                   $"Antigüedad: {txtAntiguedad.Text ?? "No especificado"}\n" +
+                                   $"Tiempo Completo: {(RadioButtonYes.IsChecked == true ? "Sí" : "No")}\n" +
+                                   $"Especialidad: {txtEspecialidad.Text ?? "No especificado"}\n" +
+                                   $"Titulación: {txtTitulacion.Text ?? "No especificado"}\n" +
+                                   $"Categoría L: {txtCategoriaL.Text ?? "No especificado"}\n" +
+                                   $"Salario: {txtSalario.Text ?? "No especificado"}\n" +
+                                   $"Porcentaje: {txtPorcentaje.Text ?? "No especificado"}\n" +
+                                   $"Departamento: {cbDepartamento.Text ?? "No especificado"}\n" +
+                                   $"Grado: {cbGrado.Text ?? "No especificado"}\n" +
+                                   $"Comentarios: {txtComentarios.Text ?? "Sin comentarios"}\n" +
+                                   $"Premios: {txtPremios.Text ?? "Ninguno"}\n" +
+                                   $"-------------------------";
 
+            //GUARADMOS
             try
             {
                 File.AppendAllText(archivoDatos, datosEmpleado + Environment.NewLine);
@@ -70,8 +78,10 @@ namespace Aplicacion_DAM2
                 MessageBox.Show($"Error al guardar los datos: {ex.Message}");
             }
 
+            // Limpiamos el formulario después de guardar
             LimpiarFormulario();
         }
+
 
 
         //DEBAJO EL MÉTODO QUE TRAERÁ AUTOMÁTICAMENTE EL ULTIMO CÓDIGO DE EMPLEADO DEL FICHERO +1

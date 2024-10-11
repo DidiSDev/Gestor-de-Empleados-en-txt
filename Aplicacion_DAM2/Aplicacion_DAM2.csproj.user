@@ -7,10 +7,16 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="acercaDe.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="ActualizarDatos.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="AltaDatos.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Ayuda.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="ConsultaDatos.xaml.cs">
@@ -21,10 +27,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="acercaDe.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="ActualizarDatos.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="AltaDatos.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Ayuda.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ConsultaDatos.xaml">

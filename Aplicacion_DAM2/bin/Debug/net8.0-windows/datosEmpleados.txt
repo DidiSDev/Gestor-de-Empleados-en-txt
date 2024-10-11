@@ -1,15 +1,30 @@
 Código Empleado: 1
-Nombre: Diego
-Alta: 09/10/2024
-Antigüedad: qwe
+Nombre: DiegoWW
+Alta: 10/10/2024
+Antigüedad: hahahe
+Tiempo Completo: No
+Especialidad: wda
+Titulación: VAVAwdw
+Categoría L: EWEWwaga
+Salario: 1283245
+Porcentaje: 52
+Departamento: Departamento 2
+Grado: Grado B
+Comentarios: ADADwdagw
+Premios: BABAwa
+-------------------------
+Código Empleado: 2
+Nombre: Paula
+Alta: 03/10/2024
+Antigüedad: Mucha
 Tiempo Completo: Sí
-Especialidad: qwe
-Titulación: qwe
-Categoría L: qwe
-Salario: 1233
-Porcentaje: 22
-Departamento: Departamento 1
-Grado: Grado C
-Comentarios: qwe
-Premios: qwe
+Especialidad: adwe
+Titulación: adwe
+Categoría L: ad
+Salario: 2221
+Porcentaje: 52
+Departamento: Departamento 2
+Grado: Grado A
+Comentarios: adewe
+Premios: ad
 -------------------------

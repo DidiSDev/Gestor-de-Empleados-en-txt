@@ -1,12 +1,185 @@
 ﻿<Window x:Class="Aplicacion_DAM2.ActualizarDatos"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Aplicacion_DAM2"
-        mc:Ignorable="d"
-        Title="ActualizarDatos" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="Actualizar Datos Laborales" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+
+    <Window.Background>
+        <SolidColorBrush Color="#F0F0F0"/>
+    </Window.Background>
+
+    <Viewbox Stretch="Uniform">
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- BUSCAMOS POR ID -->
+            <Grid Grid.Row="0" Margin="0,20,50,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" HorizontalAlignment="Left" Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox Name="txtBuscarID" Text="Escribe aquí el ID..." FontSize="18" Foreground="LightGray" Width="200" Margin="0,5,10,10" GotFocus="TxtBuscarID_GotFocus" LostFocus="TxtBuscarID_LostFocus"/>
+                        <Button Content="BUSCAR" Width="100" Height="30" Background="LightGray" Foreground="Black" FontWeight="Bold" Click="BuscarDatos_Click"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,5,0,10">
+                        <TextBlock Text="Nombre:" FontSize="18" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                        <TextBox Name="txtNombreEmpleado" FontSize="18" Width="250"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Orientation="Horizontal">
+                    <TextBlock Text="ACTUALIZAR DATOS LABORALES" FontSize="24" FontWeight="Bold" Height="30" Width="386"/>
+                    <Image Source="./logo.jpg" Width="75" Height="75" Margin="20,0,10,0"/>
+                </StackPanel>
+            </Grid>
+
+            <!-- EL JSEPARATOR O HR CONOCIDO EN HTML -->
+            <Rectangle Grid.Row="1" Fill="Gray" Height="2" Width="Auto" HorizontalAlignment="Stretch"/>
+
+            <!--PANEL CONTIENE DATOS -->
+            <Grid Grid.Row="2" Margin="0,20,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- PPANEL IZQ -->
+                <StackPanel Grid.Column="0" VerticalAlignment="Top">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock HorizontalAlignment="Center" Text="Código Empleado:" FontWeight="Bold" FontSize="14" Margin="20,10,0,5" Grid.Column="0"/>
+                        <TextBox HorizontalAlignment="Left" x:Name="txtCodigoEmpleado" FontSize="14" Height="25" Grid.Column="1" Margin="10,5,0,5" Width="200"/>
+                    </Grid>
+
+                    <GroupBox Header="DATOS LABORALES" FontWeight="Bold" FontSize="14" BorderBrush="Gray" Padding="20" Margin="20,30,20,30">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <!-- CAMPOS DE DATOS LABORALES -->
+                            <TextBlock Text="Alta:" Grid.Row="0" Grid.Column="0" Margin="5" VerticalAlignment="Center" FontSize="12"/>
+                            <DatePicker x:Name="dpAlta" Grid.Row="0" Grid.Column="1" Margin="10"/>
+
+                            <TextBlock Text="Antigüedad:" Grid.Row="1" Grid.Column="0" Margin="5" VerticalAlignment="Center" FontSize="12"/>
+                            <TextBox x:Name="txtAntiguedad" Grid.Row="1" Grid.Column="1" Margin="10" Height="25"/>
+
+                            <TextBlock Text="Tiempo Completo:" Grid.Row="2" Grid.Column="0" Margin="5" VerticalAlignment="Center" FontSize="12"/>
+                            <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Margin="10,5,0,5" VerticalAlignment="Center">
+                                <RadioButton x:Name="RadioButtonYes" Content="Sí" GroupName="tiempoCompleto" FontSize="12"/>
+                                <RadioButton Name="RadioButtonNo" Content="No" GroupName="tiempoCompleto" Margin="10,0,0,0" FontSize="12"/>
+                            </StackPanel>
+
+                            <TextBlock Text="Especialidad:" Grid.Row="3" Grid.Column="0" Margin="5" VerticalAlignment="Center" FontSize="12"/>
+                            <TextBox x:Name="txtEspecialidad" Grid.Row="3" Grid.Column="1" Margin="10" Height="25"/>
+
+                            <TextBlock Text="Titulación:" Grid.Row="4" Grid.Column="0" Margin="5" VerticalAlignment="Center" FontSize="12"/>
+                            <TextBox x:Name="txtTitulacion" Grid.Row="4" Grid.Column="1" Margin="10" Height="25"/>
+
+                            <TextBlock Text="Categoría L:" Grid.Row="5" Grid.Column="0" Margin="5" VerticalAlignment="Center" FontSize="12"/>
+                            <TextBox x:Name="txtCategoriaL" Grid.Row="5" Grid.Column="1" Margin="10" Height="25"/>
+                        </Grid>
+                    </GroupBox>
+                </StackPanel>
+
+                <!-- PANEL DCH -->
+                <StackPanel Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center">
+                    <GroupBox Header="DATOS NÓMINA" FontWeight="Bold" FontSize="14" BorderBrush="Gray" Padding="20" Margin="20,0,20,30">
+                        <Grid HorizontalAlignment="Left" Width="600">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="75"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="35"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <!-- CAMPOS SALARIO, YA NO HAY TOTAL: NI SU TEXTBOX -->
+                            <TextBlock Text="Salario:" Grid.Row="0" Grid.Column="0" Margin="10" VerticalAlignment="Center" FontSize="12"/>
+                            <TextBox x:Name="txtSalario" Grid.Row="0" Margin="60,10,15,10" Height="25" Grid.ColumnSpan="2" Width="200"/>
+                            <TextBlock Text="%" Grid.Row="0" Grid.Column="2" Margin="15,0,10,0" VerticalAlignment="Center" FontSize="12"/>
+                            <TextBox x:Name="txtPorcentaje" Grid.Row="0" Grid.Column="3" Margin="41.25,15,-249,15" Height="30"/>
+                        </Grid>
+                    </GroupBox>
+
+                    <Grid Width="660">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="110"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="110"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- RESTO DE CAMPOS DEBAJO  -->
+                        <TextBlock Text="departamento:" Grid.Column="0" FontStyle="Italic" VerticalAlignment="Center" Margin="30,0,100,0" FontSize="12" Grid.ColumnSpan="2"/>
+                        <ComboBox x:Name="cbDepartamento" Grid.Row="1" Grid.Column="0" Width="250" Margin="30,10,100,10" Grid.ColumnSpan="2">
+                            <ComboBoxItem Content="Departamento 1"/>
+                            <ComboBoxItem Content="Departamento 2"/>
+                            <ComboBoxItem Content="Departamento 3"/>
+                        </ComboBox>
+
+                        <TextBlock Text="grado:" Grid.Column="3" FontStyle="Italic" VerticalAlignment="Center" Margin="30,0,30,0" FontSize="12"/>
+                        <ComboBox x:Name="cbGrado" Grid.Row="1" Margin="20,10,-150,15" Grid.Column="3">
+                            <ComboBoxItem Content="Grado A"/>
+                            <ComboBoxItem Content="Grado B"/>
+                            <ComboBoxItem Content="Grado C"/>
+                        </ComboBox>
+                    </Grid>
+
+                    <!-- COMENTARIOS/PREMIO -->
+                    <Grid HorizontalAlignment="Left" Height="125" Width="400">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock HorizontalAlignment="Left" Text="Comentarios:" Grid.Row="0" Grid.Column="0" FontWeight="Bold" Margin="35,30,0,0" VerticalAlignment="Top" FontSize="12" Width="80" Grid.ColumnSpan="2"/>
+                        <TextBox x:Name="txtComentarios" Grid.Row="0" AcceptsReturn="True" Margin="140,30,-300,10" Grid.ColumnSpan="2"/>
+                    </Grid>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="Premios:" Grid.Row="0" Grid.Column="0" FontWeight="Bold" Margin="30" VerticalAlignment="Center" FontSize="12"/>
+                        <TextBox x:Name="txtPremios" Grid.Row="0" Grid.Column="1" Margin="10,30,0,30" Height="25" Width="600" HorizontalAlignment="Left"/>
+                    </Grid>
+
+                    <!-- BOTON ACTUALIZAR DATOS (RECUERDA PONER ESTILOS DIEGO) -->
+                    <Button Content="ACTUALIZAR DATOS" Width="200" Height="40" Background="LightCoral" Foreground="White" FontWeight="Bold" Margin="0,20,0,0" Click="ActualizarDatos_Click"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Viewbox>
 </Window>

@@ -55,3 +55,8 @@ C:\Users\Alumno\Desktop\GESTOR_EMPLEADOS\Gestor-de-Empleados-en-txt\Aplicacion_D
 C:\Users\Alumno\Desktop\GESTOR_EMPLEADOS\Gestor-de-Empleados-en-txt\Aplicacion_DAM2\obj\Debug\net8.0-windows\Aplicacion_DAM2.pdb
 C:\Users\Alumno\Desktop\GESTOR_EMPLEADOS\Gestor-de-Empleados-en-txt\Aplicacion_DAM2\obj\Debug\net8.0-windows\Aplicacion_DAM2.genruntimeconfig.cache
 C:\Users\Alumno\Desktop\GESTOR_EMPLEADOS\Gestor-de-Empleados-en-txt\Aplicacion_DAM2\obj\Debug\net8.0-windows\ref\Aplicacion_DAM2.dll
+C:\Users\dilia\Desktop\Aplicacion_DAM2\Aplicacion_DAM2\obj\Debug\net8.0-windows\Aplicacion_DAM2.sourcelink.json
+C:\Users\dilia\Desktop\Aplicacion_DAM2\Aplicacion_DAM2\obj\Debug\net8.0-windows\Ayuda.baml
+C:\Users\dilia\Desktop\Aplicacion_DAM2\Aplicacion_DAM2\obj\Debug\net8.0-windows\Ayuda.g.cs
+C:\Users\dilia\Desktop\Aplicacion_DAM2\Aplicacion_DAM2\obj\Debug\net8.0-windows\acercaDe.baml
+C:\Users\dilia\Desktop\Aplicacion_DAM2\Aplicacion_DAM2\obj\Debug\net8.0-windows\acercaDe.g.cs

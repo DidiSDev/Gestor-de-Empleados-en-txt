@@ -30,7 +30,7 @@
     </Window.Resources>
 
     <Window.Background>
-        <!-- IMAGEN SIN COPYRIGHT PARA FONDO-->
+        <!-- IMAGEN SIN COPYRIGHT PARA FONDO -->
         <ImageBrush ImageSource="./Diseño1.png" Stretch="UniformToFill" Opacity="0.5"/>
     </Window.Background>
 
@@ -52,41 +52,57 @@
         </Menu>
 
         <Viewbox Stretch="Uniform">
-        <Grid>
+            <Grid>
 
-            <Border  Background="White" Opacity="0.8" Padding="20" CornerRadius="10"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-400,0,0">
-                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" >
-                    <!-- LOGO SIN COPYRIGHT -->
-                    <Image Source="./logo.jpg" Width="200" Height="200" HorizontalAlignment="Center"/>
-                </StackPanel>
-            </Border>
-            <Border Background="Aquamarine" Opacity="0.8" Padding="20" CornerRadius="10" 
+                <Border  Background="White" Opacity="0.8" Padding="20" CornerRadius="10" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-400,0,0">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <!-- LOGO SIN COPYRIGHT -->
+                        <Image Source="./logo.jpg" Width="200" Height="200" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+                <!-- DAR OPACIDAD AL FONDO BORDER PERMITE QUE SE PUEDA VER A TRAVÉS DE LA CAJA EL FONDO -->
+                <Border Background="DarkRed" Opacity="0.8" Padding="20" CornerRadius="10"
                     HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,50,0,0">
-               
-                <!-- DIEGO RECUERDA, EL NAME ES EL MISMO QUE PONDRÁS EN LOS TRIGGER COMO NOMBRE StoryBoard.TargeName SI NO NO EJECUTA -->
-                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="Bienvenido" 
-                               Text="Bienvenido al Gestor de Empleados"
-                               FontSize="64" FontWeight="ExtraBold" Foreground="Black"
-                               HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                   
-                </StackPanel>
-            </Border>
-        </Grid>
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock x:Name="Bienvenido" 
+                            Text="Bienvenido al Gestor de Empleados"
+                            FontSize="64" FontWeight="ExtraBold" Foreground="White"
+                            HorizontalAlignment="Center" VerticalAlignment="Center"
+                            RenderTransformOrigin="0.5,0.5"> <!-- PARTO DEL CENTRO PARA EL TRANSFORM -->
+                            <TextBlock.RenderTransform>
+                                <!-- LA ESCALA MÁXIMA SERÁ 1, SINO SE SALE DE LA VENTANA PORQUE TENGO PUESTO EL VIEWBOX EN UNIFORM PAR QUE EN TODAS
+                                LAS PANTALLAS SE PUEDA VER DEL MISMO TAMAÑO, ES COMO UN RESPONSIVE DE HTML-->
+                                <ScaleTransform ScaleX="1" ScaleY="1" />
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+
+                    </StackPanel>
+                </Border>
+            </Grid>
         </Viewbox>
     </DockPanel>
 
-    <!-- EVENTO TRIGGER PARA ANIMACIONES -->
+    <!-- ANIMACIONES -->
     <Window.Triggers>
         <EventTrigger RoutedEvent="Window.Loaded">
             <BeginStoryboard>
-                <Storyboard>
-                    <!-- ANIMACIÓN DE REDUCCIÓN DE OPACIDAD DESPACIO -->
+                <Storyboard RepeatBehavior="Forever" AutoReverse="True">
+                    <!-- ANIMACIÓN DE OPACIDAD PARA APARECER Y DESAPARECER, PARTIMOS DE 0.3 A 1, PARA QUE LAS LETRAS NUNCA DESAPAREZCAN DEL TODO -->
                     <DoubleAnimation Storyboard.TargetName="Bienvenido"
-                                     Storyboard.TargetProperty="Opacity"
-                                     From="0" To="1" Duration="0:0:3" />
+                                 Storyboard.TargetProperty="Opacity"
+                                 From="0.3" To="1" Duration="0:0:2" />
+
+                    <!-- EJE X (ANCHO) EL TEXTO VA A CRECER DESDE SU TAMAÑO 0.8 A SU TAMAÑO 100% (1), TARDARÁ 2 SEGUNDOS EN AUMENTAR Y 2 SEGNUDOS EN VOLVER A 0.8 -->
+                    <DoubleAnimation Storyboard.TargetName="Bienvenido"
+                                 Storyboard.TargetProperty="(TextBlock.RenderTransform).(ScaleTransform.ScaleX)"
+                                 From="0.8" To="1" Duration="0:0:2" />
+                    <!-- LO MISMO PERO EN EL EJE Y -->
+                    <DoubleAnimation Storyboard.TargetName="Bienvenido"
+                                 Storyboard.TargetProperty="(TextBlock.RenderTransform).(ScaleTransform.ScaleY)"
+                                 From="0.8" To="1" Duration="0:0:2" />
                 </Storyboard>
             </BeginStoryboard>
         </EventTrigger>
     </Window.Triggers>
+
 </Window>

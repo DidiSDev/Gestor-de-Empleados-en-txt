@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Alumno\Desktop\GESTOR_EMPLEADOS\Gestor-de-Empleados-en-txt\Aplicacion_DAM2\obj\Debug\net8.0-windows\
+C:\Users\dilia\Desktop\Aplicacion_DAM2\Aplicacion_DAM2\obj\Debug\net8.0-windows\
 Aplicacion_DAM2
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\Alumno\Desktop\GESTOR_EMPLEADOS\Gestor-de-Empleados-en-txt\Aplicacion_DAM2\App.xaml
-5-1910440810
+C:\Users\dilia\Desktop\Aplicacion_DAM2\Aplicacion_DAM2\App.xaml
+7830029301
 
-10393233594
+12-1187869076
 198-556154604
-ActualizarDatos.xaml;AltaDatos.xaml;ConsultaDatos.xaml;MainWindow.xaml;Window1.xaml;
+acercaDe.xaml;ActualizarDatos.xaml;AltaDatos.xaml;Ayuda.xaml;ConsultaDatos.xaml;MainWindow.xaml;Window1.xaml;
 
-False
+True
 

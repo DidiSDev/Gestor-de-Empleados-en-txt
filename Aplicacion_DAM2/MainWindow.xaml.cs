@@ -50,12 +50,17 @@ namespace Aplicacion_DAM2
 
         private void VerAyuda_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Aquí iría la ayuda de la aplicación", "Ayuda", MessageBoxButton.OK, MessageBoxImage.Information);
+            //MessageBox.Show("AQUÍ VA LA AYUDA DE LA ALPICACIÓN", "Ayuda", MessageBoxButton.OK, MessageBoxImage.Information);
+            Ayuda Ayuda = new Ayuda();
+            Ayuda.ShowDialog();
         }
 
         private void AcercaDe_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Aplicación de gestión de empleados. Versión 1.0 \nCreada por: Diego Díaz Senovilla", "Acerca de", MessageBoxButton.OK, MessageBoxImage.Information);
+            //MessageBox.Show("Aplicación de gestión de empleados. Versión 1.0 \nCreada por: Diego Díaz Senovilla", "Acerca de", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            acercaDe acercaDe = new acercaDe();
+            acercaDe.ShowDialog();
         }
     }
 }
