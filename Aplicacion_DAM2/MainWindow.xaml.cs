@@ -11,9 +11,7 @@ using System.Windows.Shapes;
 
 namespace Aplicacion_DAM2
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -42,6 +40,7 @@ namespace Aplicacion_DAM2
 
         private void Salir_Click(object sender, RoutedEventArgs e)
         {
+            //MENSAJE DE VERFIICACIÓN Y CONFIRMACIÓN DE EXIT
             if (MessageBox.Show("¿Estás seguro de que deseas salir?", "Salir", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 Application.Current.Shutdown();
@@ -57,6 +56,7 @@ namespace Aplicacion_DAM2
 
         private void AcercaDe_Click(object sender, RoutedEventArgs e)
         {
+            //MENSAJE PROVISIONAL A LA ESPERA DEL 1.0
             //MessageBox.Show("Aplicación de gestión de empleados. Versión 1.0 \nCreada por: Diego Díaz Senovilla", "Acerca de", MessageBoxButton.OK, MessageBoxImage.Information);
 
             acercaDe acercaDe = new acercaDe();

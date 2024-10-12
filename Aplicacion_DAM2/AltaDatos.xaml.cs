@@ -16,9 +16,7 @@ using System.IO;
 
 namespace Aplicacion_DAM2
 {
-    /// <summary>
-    /// Lógica de interacción para AltaDatos.xaml
-    /// </summary>
+
     public partial class AltaDatos : Window
     {
 
@@ -27,8 +25,8 @@ namespace Aplicacion_DAM2
         public AltaDatos()
         {
             InitializeComponent();
-            GenerarCodigoEmpleado();
-            
+            GenerarNumeroYCodigoEmpleado();
+
         }
 
 
@@ -36,22 +34,21 @@ namespace Aplicacion_DAM2
 
         private void GuardarDatos_Click(object sender, RoutedEventArgs e)
         {
-            //VOY A VALIDAR QUE SE ESCRIBA CODIGO (QUE LO HACE SÓLO), NOMBRE, SALARIO, IMPORTANTÍSIMO LA FECHA, PORQUE SINO DA ERROR EN LA CONSULTA DE DATOS SI NO HA SIDO INTRODUCIDA
-            if (string.IsNullOrWhiteSpace(txtCodigoEmpleado.Text) ||
+            //COMO CAMPOS ESENCIALES A RELLENAR DEJO EL NUMERO Y CODIGO Q SE GENERAN SOLOS, EVITANDO QUE SE REPITAN NUNCA Y ALEATORIAMENTE/SECUENCIALMENTE RESPECTIVAMENTE
+            //EL NOMBRE POR SUPUESTO, EL SALARIO Y LA FECHA (LA FECHA PORQUE SINO DA UN ERROR AL LEERLA LUEGO SI NO ESTÁ BIEN ESCRITA)
+            if (string.IsNullOrWhiteSpace(txtNumeroEmpleado.Text) ||
+                string.IsNullOrWhiteSpace(txtCodigoEmpleado.Text) ||
                 string.IsNullOrWhiteSpace(txtNombreEmpleado.Text) ||
                 string.IsNullOrWhiteSpace(txtSalario.Text) ||
-                !dpAlta.SelectedDate.HasValue ||  // ESTO ES NUEVO DIEGO: .SelectedDate.HasValue (PREGUNTA SI TIENE VALOR LA FECHA SELECCIONADA, EN CASO DE Q NO, ERROR
-                string.IsNullOrWhiteSpace(txtAntiguedad.Text) ||
-                cbDepartamento.SelectedIndex == -1 || 
-                cbGrado.SelectedIndex == -1 ||     
-                string.IsNullOrWhiteSpace(txtEspecialidad.Text))
+                !dpAlta.SelectedDate.HasValue)
             {
-                MessageBox.Show("¡Error! Los siguientes campos son obligatorios: Código, Nombre, Salario, Fecha de Alta, Antigüedad, Departamento, Grado, y Especialidad.");
+                MessageBox.Show("¡ERROR! Debes rellenar los campos: Número, Código, Nombre, Salario, Fecha de Alta.");
                 return;
             }
 
-            // MODIFICO LA CADENA DE DATOS PARA GUARDAR LOS QUE SON/NO OBLIGATORIOS
-            string datosEmpleado = $"Código Empleado: {txtCodigoEmpleado.Text}\n" +
+            // RECOGEMOS TODOS LOS DATOS, AÑADIENDO LA ÚLTIMA MODIFICACIÓN (EL CÓDIGO DE EMPLEADO GENERADO ALEATORIAMENTE CON 3 LETRAS Y 3 NUYMEROS)
+            string datosEmpleado = $"Número Empleado: {txtNumeroEmpleado.Text}\n" +
+                                   $"Código Empleado: {txtCodigoEmpleado.Text}\n" +
                                    $"Nombre: {txtNombreEmpleado.Text}\n" +
                                    $"Alta: {dpAlta.SelectedDate?.ToString("d") ?? "No especificado"}\n" +
                                    $"Antigüedad: {txtAntiguedad.Text ?? "No especificado"}\n" +
@@ -65,9 +62,9 @@ namespace Aplicacion_DAM2
                                    $"Grado: {cbGrado.Text ?? "No especificado"}\n" +
                                    $"Comentarios: {txtComentarios.Text ?? "Sin comentarios"}\n" +
                                    $"Premios: {txtPremios.Text ?? "Ninguno"}\n" +
-                                   $"-------------------------";
+                                   $"---------------------------------------------------------------------"; //BARRA SEPARADORA PARA CADA EMPLEADO EN EL TXTR
 
-            //GUARADMOS
+            //GUARDAMOS EN EL FICHERO EL STRING CON TODOS LOS DATOS SEPARADOS SECUENCIALMENTE
             try
             {
                 File.AppendAllText(archivoDatos, datosEmpleado + Environment.NewLine);
@@ -78,60 +75,81 @@ namespace Aplicacion_DAM2
                 MessageBox.Show($"Error al guardar los datos: {ex.Message}");
             }
 
-            // Limpiamos el formulario después de guardar
+            //LIMPIAMOS EL FORMULARIO TRAS PULSAR EL BOTÓN GUARDAR EMPLEADO.
             LimpiarFormulario();
         }
 
 
 
         //DEBAJO EL MÉTODO QUE TRAERÁ AUTOMÁTICAMENTE EL ULTIMO CÓDIGO DE EMPLEADO DEL FICHERO +1
-        private void GenerarCodigoEmpleado()
+        private void GenerarNumeroYCodigoEmpleado()
         {
-            int maxCodigo = 0;
+            int maxNumeroEmpleado = 0;
 
-            // VERIFICO Q EL FICHERO EXISTE, EN CASO CONTRARIO CODIGO=1
+            //VERIFICAMOS FICHERO, SI NO EXISTE X Y SI EXISTE Y
             if (File.Exists(archivoDatos))
             {
-                // LEO EL ARCHIVO ENTERO GUARDADO EN UN ARRAY QUE USAMOS TEMPORALMENTE
+                //SE LEE, EL MEJOR MÉTODO QUE HE ENCONTRADO ES GUARDAR EN UN ARRAY ESTÁTICO DE DATOS TODAS LAS LÍNEAS Y LUEGO UN FOREACH LAS RECORRE, ASÍ NO TENGO QUE
+                //CONTROLAR EL PUNTERO LECTOR YO
                 string[] lines = File.ReadAllLines(archivoDatos);
 
-                // Busca el número más alto de empleado en el archivo
+                //EL NÚMERO MÁS SALTO SERÁ +1 PARA AÑADIR EL NUEVO, QUE ESTARÁ DISABLED POR SUPUESTO
                 foreach (var line in lines)
                 {
-                    if (line.StartsWith("Código Empleado:"))
+                    if (line.StartsWith("Número Empleado:"))
                     {
-                        // RECORREMOS, CUANDO EL PUNTERO ESTÉ EN LA LINEA QUE EMPIEZA POR "Código Empleado:" RECOGERÁ EL NÚMERO CON SPLIT
                         string[] parts = line.Split(':');
-                        if (parts.Length > 1 && int.TryParse(parts[1].Trim(), out int codigoEmpleado))
+                        if (parts.Length > 1 && int.TryParse(parts[1].Trim(), out int numeroEmpleado))
                         {
-                            if (codigoEmpleado > maxCodigo)
+                            if (numeroEmpleado > maxNumeroEmpleado)
                             {
-                                maxCodigo = codigoEmpleado;
+                                maxNumeroEmpleado = numeroEmpleado;
                             }
                         }
                     }
                 }
             }
-            else
+
+            //+1
+            int siguienteNumeroEmpleado = maxNumeroEmpleado + 1;
+            txtNumeroEmpleado.Text = siguienteNumeroEmpleado.ToString();
+
+            //GENERAMOS CÓDIGO ALEATORIO 3 LETRAS3 NUMEROS Q NO SE REPETIRÁN
+            string codigoAleatorio;
+            do
             {
-                //NO EXISTE EL FICHERO PUES EL PRIMER CODIGO SERA EL 0 QUE AÑADIRÉ +1 DEBAJO DEL ELSE
-                maxCodigo = 0;
-            }
+                codigoAleatorio = GenerarCodigoAleatorio(); //MODULARIZAMOS, EL CODIGO SE GENERARÁ MIENTRAS EL BOOLEANO RETORNE QUE EXISTE ESE CÓDIGO (AUNQUE VEO DIFÍCIL QUE SE REPITAN)
+            } while (CodigoYaExiste(codigoAleatorio));
 
-  
-            int siguienteCodigoEmpleado = maxCodigo + 1;
-
-            // NO FUNCIONA ESTO POR ALGUNA RAZÓN DESCONOCIDA
-            txtCodigoEmpleado.Text = siguienteCodigoEmpleado.ToString();
-            //YA LO ENTIENDO, NO PUEDO DEJAR EN EL XAML ENABLED=FALSE PORQUE ENTONCES EL NUMERO NO SE METE, TENGO QUE HACERLO DESPUÉS DE PONER EL CODIGO, DEBAJO DE ESTA LINEA
+            txtCodigoEmpleado.Text = codigoAleatorio;
             txtCodigoEmpleado.IsEnabled = false;
         }
 
-        
+        private string GenerarCodigoAleatorio()
+        {
+            Random random = new Random();
+            string letras = new string(Enumerable.Repeat("ABCDEFGHIJKLMNÑOPQRSTUVWXYZ", 3) //EL 3 ES PARA RECORRER 3 VECES ALEATORIAMENTE EL ARRAY Y SELECCIONAR 3 LETRAS
+                              .Select(s => s[random.Next(s.Length)]).ToArray());
+
+            string numeros = random.Next(100, 999).ToString(); //EN ESTE CASO NO CONTROLO QUE EL CÓDIGO EMPIECE POR 0-99 NUNCA, PERO SÍ ENTRE 100 Y 999
+            return letras + numeros;
+        }
+
+        //COMPROBAMOS SI EL CÓDIGO YA EXISTE O NO EN EL FICHERO, EN CASO DE EXISTIR GENERAMOS UNO NUEVO
+        private bool CodigoYaExiste(string codigo)
+        {
+            if (!File.Exists(archivoDatos)) return false;
+
+            string[] lines = File.ReadAllLines(archivoDatos);
+            return lines.Any(line => line.Contains($"Código Empleado: {codigo}"));
+        }
+
+
         private void LimpiarFormulario()
         {
+            txtNumeroEmpleado.Text = ""; //AÑADO EL NUMERO DE EMPLEADO QUE ANTES NO LO TENÍA
+            txtCodigoEmpleado.Text = ""; 
             txtNombreEmpleado.Text = "";
-            txtCodigoEmpleado.Text = "";
             dpAlta.SelectedDate = null;
             txtAntiguedad.Text = "";
             RadioButtonYes.IsChecked = false;
@@ -145,22 +163,24 @@ namespace Aplicacion_DAM2
             cbGrado.SelectedIndex = -1;
             txtComentarios.Text = "";
             txtPremios.Text = "";
-            
+
+            //REGENERAMOS EL NUEVO NUMERO Y CODIGO DE EMPLEADO PARA LA SIGUIENTE ALTA, DE FORMA AUTOMÁTICA Y SECUENCIAL
+            GenerarNumeroYCodigoEmpleado();
         }
 
         private void TxtNombreEmpleado_GotFocus(object sender, RoutedEventArgs e)
         {
-            // FUNCIONALIDAD SOBRE LA CAJA DEL NOMBRE QUE QUEDARÁ VACÍA SI HACEMOS CLICK SOBRE ELLA
+            // GOTFOCUS ME PERMITIRÁ LIMPIAR LA CAJA EN EL MOMENTO QUE EL CLICK DEL USUARIO SE POSE SOBRE ESTA CAJITA
             if (txtNombreEmpleado.Text == "Escribe el nombre...")
             {
                 txtNombreEmpleado.Text = "";
-                txtNombreEmpleado.Foreground = Brushes.Black; //TEXTO EN NEGRO SE VE MEJOR
+                txtNombreEmpleado.Foreground = Brushes.Black;
             }
         }
 
         private void TxtNombreEmpleado_LostFocus(object sender, RoutedEventArgs e)
         {
-            // SI QUITAMOS EL FOCO, DEJAMOS DE NUEVO LO QUE HABÍA Y PONEMOS EL TEXTO EN GRIS OSCURO (TIPO DISABLED)
+            // LOST FOCUS HACE QUE SI QUITAMOS EL FOCO DEL CLICK, VUELVA A APARECER -> "Escribe el nombre..."
             if (string.IsNullOrWhiteSpace(txtNombreEmpleado.Text))
             {
                 txtNombreEmpleado.Text = "Escribe el nombre...";

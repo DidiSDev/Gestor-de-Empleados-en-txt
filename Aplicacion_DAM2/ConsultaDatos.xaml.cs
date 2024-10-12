@@ -69,30 +69,31 @@ namespace Aplicacion_DAM2
 
         private void BuscarDatos_Click(object sender, RoutedEventArgs e)
         {
-            string idEmpleado = txtBuscarID.Text;
+            string numeroEmpleado = txtBuscarID.Text;
 
-            if (string.IsNullOrWhiteSpace(idEmpleado))
+            if (string.IsNullOrWhiteSpace(numeroEmpleado))
             {
-                MessageBox.Show("Por favor, introduce un ID válido.");
+                MessageBox.Show("Por favor, introduce un número de empleado válido.");
                 return;
             }
 
             try
             {
-                // LEEMOS TODAS LAS LINEAS
+                // LEEMOS TODAS LAS LINEAS DEL ARCHIVO
                 string[] lines = File.ReadAllLines(archivoDatos);
 
-                // BU8SCAMOS AL EMPLEADO
-                var empleado = BuscarEmpleadoPorID(lines, idEmpleado);
+                // BUSCAMOS AL EMPLEADO POR NÚMERO DE EMPLEADO
+                var empleado = BuscarEmpleadoPorNumero(lines, numeroEmpleado);
 
                 if (empleado != null)
                 {
-                    // LLAMAMOS AL METODO DE RELLENAR FORMULARIO CON EL EMPLEADO RECOGIDO
+                    // LLENAMOS EL FORMULARIO CON LOS DATOS DEL EMPLEADO
                     RellenarFormulario(empleado);
+                    CalcularTotalNomina();
                 }
                 else
                 {
-                    MessageBox.Show("No se encontró ningún empleado con el ID proporcionado.");
+                    MessageBox.Show("No se encontró ningún empleado con el número proporcionado.");
                 }
             }
             catch (Exception ex)
@@ -100,16 +101,14 @@ namespace Aplicacion_DAM2
                 MessageBox.Show($"Error al buscar el empleado: {ex.Message}");
             }
         }
-
-        // BUSCAMOS AL EMPLEADOPOR ID
-        private string[] BuscarEmpleadoPorID(string[] lines, string idEmpleado)
+        private string[] BuscarEmpleadoPorNumero(string[] lines, string numeroEmpleado)
         {
             var empleado = new StringBuilder();
             bool encontrado = false;
 
             foreach (var line in lines)
             {
-                if (line.StartsWith("Código Empleado:") && line.Contains(idEmpleado))
+                if (line.StartsWith("Número Empleado:") && line.Contains(numeroEmpleado))
                 {
                     encontrado = true;
                 }
@@ -121,17 +120,37 @@ namespace Aplicacion_DAM2
 
                 if (line.StartsWith("-------------------------") && encontrado)
                 {
-                    break; // Finalizamos la búsqueda cuando encontramos el final del bloque
+                    break; //CON EL INTERRUPTOR DEJAMOS DE RECORRER EL .TXT COMO BUENA PRÁCTICA SI HEMOS ENCONTRADO EL QUE SOLICITA EL USUARIO
                 }
             }
 
             return encontrado ? empleado.ToString().Split('\n') : null;
         }
 
+        private void CalcularTotalNomina()
+        {
+            if (decimal.TryParse(txtSalario.Text, out decimal salario) &&
+                decimal.TryParse(txtPorcentaje.Text, out decimal porcentaje))
+            {
+                //CALCULAMOS EL CAMPO TOTAL DEL SALARIO, EL % TIENE QUE RESTARSE AL SALARIO ME DIJO ISA
+                decimal total = salario - (salario * (porcentaje / 100));
+                txtTotalNomina.Text = total.ToString("F2"); //TOTAL Y HASTA 2 DECIMALES (PARA ESO EL "F2)
+            }
+            else
+            {
+                txtTotalNomina.Text = "¡Error!"; //SI LOS VALORES NO SON CORRECTOS (METE LETRAS O COSAS ASÍ), ERROR
+            }
+        }
+
+        // BUSCAMOS AL EMPLEADOPOR ID
+        
+
         private void RellenarFormulario(string[] empleado)
         {
             foreach (var linea in empleado)
             {
+                //AQUÍ RECORREMOS A PARTIR DE CODIGO DE EMPLEADO, DEBIDO A QUE EL NUMERO DE EMPLEADO YA HA BUSCADO EL DATO, Y SOLO SE HACE UNA VEZ, EL ARRAY SOLAMENTE TIENE
+                //GUARDADO UN EMPLEADO
                 if (linea.StartsWith("Código Empleado:"))
                 {
                     txtCodigoEmpleado.Text = ObtenerValor(linea);
@@ -204,19 +223,19 @@ namespace Aplicacion_DAM2
             deshabilitarCampos();
         }
 
-        // MODULARIZAMOS EL SPLIT PORQUE SI NO LO TENGO QUE HACER 80 VECES
+        // MODULARIZAMOS EL SPLIT PORQUE SI NO LO TENGO Q HACER 80 VECES
         private string ObtenerValor(string linea)
         {
             return linea.Split(':')[1].Trim();
         }
 
-        // MÉTODOS DEL FOCUS PARA BUSCAR ID, QUEDA INTERESANTE
+        // MÉTODOS DEL FOCUS PARA BUSCAR ID, QUEDA INTERESANTE PARA QUITAR LAS LETRAS AL HACER CLICK Y RECORDAR SI PIERDE FOCUS Y NO HAY NÚMERO INSERTADO  
         private void TxtBuscarID_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (txtBuscarID.Text == "Escribe aquí el ID...")
+            if (txtBuscarID.Text == "Num. de empleado o ID")
             {
-                txtBuscarID.Text = "";
-                txtBuscarID.Foreground = new SolidColorBrush(Colors.Black);
+                txtBuscarID.Text = ""; 
+                txtBuscarID.Foreground = new SolidColorBrush(Colors.Black); 
             }
         }
 
@@ -224,9 +243,10 @@ namespace Aplicacion_DAM2
         {
             if (string.IsNullOrWhiteSpace(txtBuscarID.Text))
             {
-                txtBuscarID.Text = "Escribe aquí el ID...";
-                txtBuscarID.Foreground = new SolidColorBrush(Colors.LightGray);
+                txtBuscarID.Text = "Num. de empleado o ID";
+                txtBuscarID.Foreground = new SolidColorBrush(Colors.LightGray); 
             }
         }
+
     }
 }

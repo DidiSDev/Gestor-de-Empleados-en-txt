@@ -1,30 +1,64 @@
-Código Empleado: 1
-Nombre: DiegoWW
-Alta: 10/10/2024
-Antigüedad: hahahe
+Número Empleado: 1
+Código Empleado: XUF912
+Nombre: Diego Díaz
+Alta: 09/10/2024
+Antigüedad: qweqweqweqw
+Tiempo Completo: Sí
+Especialidad: qweqrqwe
+Titulación: 
+Categoría L: eqweqweqwe
+Salario: 1232
+Porcentaje: 21
+Departamento: Departamento 1
+Grado: Grado B
+Comentarios: qweqwqwe
+Premios: eqweqweweq
+-------------------------
+Número Empleado: 2
+Código Empleado: QRD947
+Nombre: Paula Rumoroso Ruiz
+Alta: 11/10/2024
+Antigüedad: qweqweqwe
 Tiempo Completo: No
-Especialidad: wda
-Titulación: VAVAwdw
-Categoría L: EWEWwaga
-Salario: 1283245
-Porcentaje: 52
+Especialidad: qweqwe
+Titulación: qweqweqw
+Categoría L: eqweqw
+Salario: 1232
+Porcentaje: 20
 Departamento: Departamento 2
 Grado: Grado B
-Comentarios: ADADwdagw
-Premios: BABAwa
+Comentarios: qweqwe
+Premios: e
 -------------------------
-Código Empleado: 2
-Nombre: Paula
-Alta: 03/10/2024
-Antigüedad: Mucha
-Tiempo Completo: Sí
-Especialidad: adwe
-Titulación: adwe
-Categoría L: ad
-Salario: 2221
-Porcentaje: 52
+Número Empleado: 3
+Código Empleado: MÑC691
+Nombre: Un tío majo
+Alta: 09/10/2024
+Antigüedad: 
+Tiempo Completo: No
+Especialidad: 
+Titulación: 
+Categoría L: 
+Salario: 213
+Porcentaje: 21
 Departamento: Departamento 2
-Grado: Grado A
-Comentarios: adewe
-Premios: ad
+Grado: Grado B
+Comentarios: qweqeq
+Premios: 
 -------------------------
+Número Empleado: 4
+Código Empleado: NAZ440
+Nombre: dascacas
+Alta: 12/10/2024
+Antigüedad: acwawca
+Tiempo Completo: Sí
+Especialidad: awca
+Titulación: dawd
+Categoría L: awdawd
+Salario: 1221
+Porcentaje: 31
+Departamento: Departamento 2
+Grado: 
+Comentarios: dadaw
+Premios: awd
+---------------------------------------------------------------------

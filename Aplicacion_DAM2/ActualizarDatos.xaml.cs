@@ -26,49 +26,51 @@ namespace Aplicacion_DAM2
         //AL DAR AL BOTÓN BUSCAR SE EJECUTA LA LECTURA DEL FICHERO Y LA Y SE METEN LOS TEXTOS SEGÚN LOS DATOS RECOGIDOS PARA EL CÓDIGO DE EMPLEADO ELEIGIDO
         private void BuscarDatos_Click(object sender, RoutedEventArgs e)
         {
-            string idEmpleado = txtBuscarID.Text;
+            string numeroEmpleado = txtNumeroEmpleado.Text;  //BUSCAMOS EL NUMERO DE EMPLEADO
 
-            if (string.IsNullOrWhiteSpace(idEmpleado))
+            if (string.IsNullOrWhiteSpace(numeroEmpleado) || numeroEmpleado == "Num. de empleado o ID")
             {
                 MessageBox.Show("¡ERROR! Debe introducir un ID válido");
                 return;
             }
 
-            //METO TRYCATCH DE CONTROLD E ERRORES
+            // LIMPIAMOS FORMULARIO ANTES DE BUSCAR LOS NUEVOS DATOS, POR SI ACASO
+            LimpiarFormulario();
+
             try
             {
-                //LEEMOS TODAS LAS LINEAS DEL ARCHIVO
+                // LEEMOS TODAS LAS LINEAS DEL ARCHIVO
                 string[] lines = File.ReadAllLines(archivoDatos);
 
-                //BUSCAMOS AL EMPLEADO POR EL ID
-                var empleado = BuscarEmpleadoPorID(lines, idEmpleado);
+                // BUSCAMOS AL EMPLEADO POR EL NÚMERO DE EMPLEADO
+                var empleado = BuscarEmpleadoPorID(lines, numeroEmpleado);
 
                 if (empleado != null)
                 {
-                    //LLAMAMOS AL MÉTODO PARA RELLENAR EL FORMULARIO
+                    // LLAMAMOS AL MÉTODO PARA RELLENAR EL FORMULARIO
                     RellenarFormulario(empleado);
-                    DeshabilitarCampoCodigo(); //EL CAMPO DE CÓDIGO LO DEJO DESHABILITADO, ES EL ÚNICO QUE NO SE PODRÁ MODIFICAR Y LO DESHABILITO NADA MÁS CARGAR LOS DATOS
+                    DeshabilitarCamposCodigoYID();  //CODIGO Y NUMERO NO PUEDEN MODIFICARSE
                 }
                 else
                 {
-                    MessageBox.Show("No se encontró ningún empleado con ese ID.");
+                    MessageBox.Show("No se encontró ningún empleado con ese ID."); //ERROR QUE SI CONTROLO, NO HAY ESE ID
                 }
             }
-            catch (Exception ex)//MENSAJE DE TRYCATCH ERROR INESPERADO ¿?
+            catch (Exception ex)
             {
-                MessageBox.Show($"Error al buscar el empleado: {ex.Message}");
+                MessageBox.Show($"Error al buscar el empleado: {ex.Message}"); //ERROR NO CONTROLADO
             }
         }
 
         //BUSCAMOS EL EMPLEADO POR ID
-        private string[] BuscarEmpleadoPorID(string[] lines, string idEmpleado)
+        private string[] BuscarEmpleadoPorID(string[] lines, string numeroEmpleado)
         {
             var empleado = new StringBuilder();
             bool encontrado = false;
 
             foreach (var line in lines)
             {
-                if (line.StartsWith("Código Empleado:") && line.Contains(idEmpleado))
+                if (line.StartsWith("Número Empleado:") && line.Contains(numeroEmpleado)) //NUEVA IMPLEMENTACIÓN, NUM EMPLEADO QUE EN MI VERSIÓN ANTERIOR NO ESTABA
                 {
                     encontrado = true;
                 }
@@ -80,7 +82,7 @@ namespace Aplicacion_DAM2
 
                 if (line.StartsWith("-------------------------") && encontrado)
                 {
-                    break; // Finalizamos la búsqueda cuando encontramos el final del bloque
+                    break; //EL INTERRUPTOR NOS SACA SI HEMOS ENCONTRADO AL SUSODICHO
                 }
             }
 
@@ -95,6 +97,10 @@ namespace Aplicacion_DAM2
                 if (linea.StartsWith("Código Empleado:"))
                 {
                     txtCodigoEmpleado.Text = ObtenerValor(linea);
+                }
+                else if (linea.StartsWith("Número Empleado:"))  // NUMERO DE EMPLEADO SE RELLENA
+                {
+                    txtNumeroEmpleado.Text = ObtenerValor(linea);
                 }
                 else if (linea.StartsWith("Nombre:"))
                 {
@@ -156,9 +162,17 @@ namespace Aplicacion_DAM2
                     txtPremios.Text = ObtenerValor(linea);
                 }
             }
+
+            DeshabilitarCamposCodigoYID();  //DESHABILITAMOS CAMPOS AL CARGAR (ID Y CODIGO)
+        }
+        private void DeshabilitarCamposCodigoYID()
+        {
+            txtCodigoEmpleado.IsEnabled = false;
+            txtNumeroEmpleado.IsEnabled = false; 
         }
 
-        // MÉTODO PARA OBTENER EL VALOR DE CADA LÍNEA
+
+        //EL SPLIT ES CANSADO HACERLO TODO EL TIEMPO, MODULARIZAMOS
         private string ObtenerValor(string linea)
         {
             return linea.Split(':')[1].Trim();
@@ -208,10 +222,10 @@ namespace Aplicacion_DAM2
 
         private void LimpiarFormulario()
         {
-            //LIMPIEZA DE TODO AUNQUE LA FECHA EN NULL
+            // LIMPIEZA DE TODO AUNQUE LA FECHA EN NULL
             txtCodigoEmpleado.Text = "";
             txtNombreEmpleado.Text = "";
-            dpAlta.SelectedDate = null; 
+            dpAlta.SelectedDate = null;
             txtAntiguedad.Text = "";
             RadioButtonYes.IsChecked = false;
             RadioButtonNo.IsChecked = false;
@@ -220,12 +234,15 @@ namespace Aplicacion_DAM2
             txtCategoriaL.Text = "";
             txtSalario.Text = "";
             txtPorcentaje.Text = "";
-            cbDepartamento.SelectedIndex = -1; //EL -1 ME QUITA LA SELECCIÓN DEL COMBOBOX RECUERDA DIEGO
+            cbDepartamento.SelectedIndex = -1;
             cbGrado.SelectedIndex = -1;
             txtComentarios.Text = "";
             txtPremios.Text = "";
-            txtBuscarID.Text = "Escribe aquí el ID...";
-            txtBuscarID.Foreground = new SolidColorBrush(Colors.LightGray);
+
+            // A VECES EL GOTFOCUS Y LOSTFOCUS NO FUNCIONA UNA VEZ HMOS PULSADO ACTUALIZAR DATOS, PERO SIGUE SIENDO FUNCIONAL AUNQUE LAS LÍNEAS SE BORREN A MANO
+            txtNumeroEmpleado.IsEnabled = true;
+            txtNumeroEmpleado.Text = "Num. de empleado o ID"; 
+            txtNumeroEmpleado.Foreground = new SolidColorBrush(Colors.LightGray);
         }
 
         // ACTUALIZA LOS DATOS DEL EMPLEADO EN EL ARCHIVO
@@ -249,7 +266,9 @@ namespace Aplicacion_DAM2
                 {
                     if (line.StartsWith("-------------------------"))
                     {
-                        // GUARDAMOS LOS NUEVOS DATOS ACTUALIZADOS
+                        // GUARDAMOS LOS NUEVOS DATOS ACTUALIZADOS SIN MODIFICAR CÓDIGO Y NÚMERO DE EMPLEADO
+                        //PERO ESTA VEZ COMO YA TENEMOS EL NUMERO DE EMPLEADO (ID) YA NO ES NECESARIO INTRODUCIRLO DE NUEVO, PORQUE SI LA LINEA EMPIEZA CON CODIGO EMPLEADO..
+
                         empleadoActualizado.Add($"Código Empleado: {txtCodigoEmpleado.Text}");
                         empleadoActualizado.Add($"Nombre: {txtNombreEmpleado.Text}");
                         empleadoActualizado.Add($"Alta: {dpAlta.SelectedDate.Value.ToShortDateString()}");
@@ -268,28 +287,31 @@ namespace Aplicacion_DAM2
 
                         encontrado = false;
                     }
+
                 }
             }
-
+            txtNumeroEmpleado.IsEnabled = true;
+            txtNumeroEmpleado.Focus();
             return empleadoActualizado.ToArray();
+            
         }
 
         //IGUAL QUE EN CONSULTADATOS
         private void TxtBuscarID_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (txtBuscarID.Text == "Escribe aquí el ID...")
+            if (txtNumeroEmpleado.Text == "Num. de empleado o ID")
             {
-                txtBuscarID.Text = "";
-                txtBuscarID.Foreground = new SolidColorBrush(Colors.Black);
+                txtNumeroEmpleado.Text = "";
+                txtNumeroEmpleado.Foreground = new SolidColorBrush(Colors.Black);
             }
         }
 
         private void TxtBuscarID_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtBuscarID.Text))
+            if (string.IsNullOrWhiteSpace(txtNumeroEmpleado.Text))
             {
-                txtBuscarID.Text = "Escribe aquí el ID...";
-                txtBuscarID.Foreground = new SolidColorBrush(Colors.LightGray);
+                txtNumeroEmpleado.Text = "Num. de empleado o ID";
+                txtNumeroEmpleado.Foreground = new SolidColorBrush(Colors.LightGray);
             }
         }
     }

@@ -11,12 +11,16 @@
   <ItemGroup>
     <None Remove="ayuda.JPG" />
     <None Remove="Diseño1.png" />
+    <None Remove="fondoForm.jpg" />
+    <None Remove="fondoFormu.jpg" />
     <None Remove="logo.jpg" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="ayuda.JPG" />
     <Resource Include="Diseño1.png" />
+    <Resource Include="fondoForm.jpg" />
+    <Resource Include="fondoFormu.jpg" />
     <Resource Include="logo.jpg" />
   </ItemGroup>
 
