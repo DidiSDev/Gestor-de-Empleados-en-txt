@@ -2,12 +2,12 @@ Número Empleado: 1
 Código Empleado: XUF912
 Nombre: Diego Díaz
 Alta: 09/10/2024
-Antigüedad: qweqweqweqw
+Antigüedad: aaaaaaaaaa
 Tiempo Completo: Sí
 Especialidad: qweqrqwe
 Titulación: 
 Categoría L: eqweqweqwe
-Salario: 1232
+Salario: 12322
 Porcentaje: 21
 Departamento: Departamento 1
 Grado: Grado B
@@ -61,4 +61,20 @@ Departamento: Departamento 2
 Grado: 
 Comentarios: dadaw
 Premios: awd
+---------------------------------------------------------------------
+Número Empleado: 5
+Código Empleado: WFG637
+Nombre: Paquito
+Alta: 02/10/2024
+Antigüedad: qweqw
+Tiempo Completo: No
+Especialidad: qwe
+Titulación: qwe
+Categoría L: qwe
+Salario: 1550
+Porcentaje: 21
+Departamento: Departamento 2
+Grado: Grado B
+Comentarios: qwe
+Premios: qwe
 ---------------------------------------------------------------------

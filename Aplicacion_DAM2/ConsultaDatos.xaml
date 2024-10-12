@@ -8,6 +8,57 @@
         <ImageBrush ImageSource="./fondoForm.jpg" Stretch="UniformToFill" Opacity="0.8"/>
     </Window.Background>
 
+    <Window.Resources>
+        <!-- Window.Resources ME CARGA LOS DropShadowEffect ME GUSTA MUCHO EL SOMBREADO + EL BLUR QUE DISTORSIONA LA SOMBRA EN LAS CAJAS -->
+        <DropShadowEffect x:Key="ShadowEffect" BlurRadius="10" ShadowDepth="5" Opacity="0.5" Color="Black" />
+
+        <!-- HOVER AL PASAR EL RATÓN POR ENCIMA DE LOS TEXTBOS, BUTTON, COMBOBOX -->
+        <Style TargetType="TextBox">
+            <Setter Property="Effect" Value="{StaticResource ShadowEffect}"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="LightGray"/>
+                    <Setter Property="Effect">
+                        <Setter.Value>
+                            <DropShadowEffect BlurRadius="15" ShadowDepth="5" Opacity="0.7" Color="DarkGray"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- HOVER-BOTÓN -->
+        <Style TargetType="Button">
+            <Setter Property="Effect" Value="{StaticResource ShadowEffect}"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="DarkOrange"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="Effect">
+                        <Setter.Value>
+                            <DropShadowEffect BlurRadius="15" ShadowDepth="7" Opacity="0.7" Color="DarkOrange"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- HOVER-COMBO -->
+        <Style TargetType="ComboBox">
+            <Setter Property="Effect" Value="{StaticResource ShadowEffect}"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="LightGray"/>
+                    <Setter Property="Effect">
+                        <Setter.Value>
+                            <DropShadowEffect BlurRadius="15" ShadowDepth="5" Opacity="0.7" Color="DarkGray"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
     <Viewbox Stretch="Uniform">
         <Border Background="#F5F5F5" Opacity="0.85" CornerRadius="15" Padding="20">
             <Grid Margin="22.5">
@@ -32,7 +83,7 @@
                             <Button Content="BUSCAR" Width="112.5" Height="30" Background="LightGray" Foreground="Black" FontWeight="Bold" Click="BuscarDatos_Click"/>
                         </StackPanel>
 
-                        <!-- Nombre del Empleado -->
+                        <!-- NOM EMPLEASDO -->
                         <StackPanel Orientation="Horizontal" Margin="0,7.5,0,15">
                             <TextBlock Text="Nombre:" FontSize="21" VerticalAlignment="Center" Margin="0,0,15,0"/>
                             <TextBox Name="txtNombreEmpleado" FontSize="21" Width="300"/>
@@ -64,7 +115,7 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
 
-                            <!-- CÓDIGO EMPLEADO GENERADO AUTOMÁTICAMENTE -->
+                            <!-- CÓDIGO EMPLEADO GENERADO AUTOMATICO -->
                             <TextBlock HorizontalAlignment="Center" Text="Código Empleado:" FontWeight="Bold" FontSize="16.5" Margin="22.5,15,0,7.5" Grid.Column="0"/>
                             <TextBox HorizontalAlignment="Left" x:Name="txtCodigoEmpleado" FontSize="15" Height="30" Grid.Column="1" Margin="15,7.5,0,7.5" Width="225" IsEnabled="False"/>
                         </Grid>
@@ -198,7 +249,7 @@
                             </Grid.ColumnDefinitions>
 
                             <TextBlock Text="Premios:" Grid.Row="0" Grid.Column="0" FontWeight="Bold" Margin="37.5" VerticalAlignment="Center" FontSize="13.5"/>
-                            <TextBox x:Name="txtPremios" Grid.Row="0" Grid.Column="1" Margin="15,31.5,0,31.5" Height="30" Width="615" HorizontalAlignment="Left"/>
+                            <TextBox x:Name="txtPremios" Grid.Row="0" Grid.Column="1" FontSize="16" Margin="15,31.5,0,31.5" Height="30" Width="615" HorizontalAlignment="Left"/>
                         </Grid>
                     </StackPanel>
                 </Grid>

@@ -7,8 +7,16 @@
       "RelativeMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|solutionrelative:altadatos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|c:\\users\\dilia\\desktop\\aplicacion_dam2\\aplicacion_dam2\\actualizardatos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|solutionrelative:actualizardatos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|c:\\users\\dilia\\desktop\\aplicacion_dam2\\aplicacion_dam2\\altadatos.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|solutionrelative:altadatos.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|c:\\users\\dilia\\desktop\\aplicacion_dam2\\aplicacion_dam2\\consultadatos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|solutionrelative:consultadatos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|c:\\users\\dilia\\desktop\\aplicacion_dam2\\aplicacion_dam2\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,14 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|c:\\users\\dilia\\desktop\\aplicacion_dam2\\aplicacion_dam2\\actualizardatos.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|solutionrelative:actualizardatos.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|c:\\users\\dilia\\desktop\\aplicacion_dam2\\aplicacion_dam2\\actualizardatos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|solutionrelative:actualizardatos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|c:\\users\\dilia\\desktop\\aplicacion_dam2\\aplicacion_dam2\\consultadatos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|solutionrelative:consultadatos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F6222F2F-5415-48D9-8EB6-0AA94E56E028}|Aplicacion_DAM2.csproj|c:\\users\\dilia\\desktop\\aplicacion_dam2\\aplicacion_dam2\\ayuda.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -66,8 +66,7 @@
               "RelativeToolTip": "acercaDe.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAwBYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-11T12:12:04.027Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-11T12:12:04.027Z"
             },
             {
               "$type": "Document",
@@ -78,8 +77,7 @@
               "ToolTip": "C:\\Users\\dilia\\Desktop\\Aplicacion_DAM2\\Aplicacion_DAM2\\acercaDe.xaml",
               "RelativeToolTip": "acercaDe.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-11T12:10:39.481Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-11T12:10:39.481Z"
             },
             {
               "$type": "Document",
@@ -90,24 +88,22 @@
               "ToolTip": "C:\\Users\\dilia\\Desktop\\Aplicacion_DAM2\\Aplicacion_DAM2\\Ayuda.xaml",
               "RelativeToolTip": "Ayuda.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-11T11:54:29.946Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-11T11:54:29.946Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\dilia\\Desktop\\Aplicacion_DAM2\\Aplicacion_DAM2\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
               "ToolTip": "C:\\Users\\dilia\\Desktop\\Aplicacion_DAM2\\Aplicacion_DAM2\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-10T08:11:25.444Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-10T08:11:25.444Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\dilia\\Desktop\\Aplicacion_DAM2\\Aplicacion_DAM2\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
@@ -115,8 +111,7 @@
               "RelativeToolTip": "MainWindow.xaml.cs",
               "ViewState": "AgIAACgAAAAAAAAAAAA0wDoAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T08:11:23.775Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-10T08:11:23.775Z"
             },
             {
               "$type": "Document",
@@ -132,20 +127,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "AltaDatos.xaml.cs",
               "DocumentMoniker": "C:\\Users\\dilia\\Desktop\\Aplicacion_DAM2\\Aplicacion_DAM2\\AltaDatos.xaml.cs",
               "RelativeDocumentMoniker": "AltaDatos.xaml.cs",
               "ToolTip": "C:\\Users\\dilia\\Desktop\\Aplicacion_DAM2\\Aplicacion_DAM2\\AltaDatos.xaml.cs",
               "RelativeToolTip": "AltaDatos.xaml.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAApwBoAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAABcAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-10T08:16:09.873Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "ConsultaDatos.xaml",
               "DocumentMoniker": "C:\\Users\\dilia\\Desktop\\Aplicacion_DAM2\\Aplicacion_DAM2\\ConsultaDatos.xaml",
               "RelativeDocumentMoniker": "ConsultaDatos.xaml",
@@ -165,12 +160,11 @@
               "RelativeToolTip": "ConsultaDatos.xaml.cs",
               "ViewState": "AgIAANsAAAAAAAAAAAAmwPEAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T08:17:02.641Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-10T08:17:02.641Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "ActualizarDatos.xaml",
               "DocumentMoniker": "C:\\Users\\dilia\\Desktop\\Aplicacion_DAM2\\Aplicacion_DAM2\\ActualizarDatos.xaml",
               "RelativeDocumentMoniker": "ActualizarDatos.xaml",
@@ -182,7 +176,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "ActualizarDatos.xaml.cs",
               "DocumentMoniker": "C:\\Users\\dilia\\Desktop\\Aplicacion_DAM2\\Aplicacion_DAM2\\ActualizarDatos.xaml.cs",
               "RelativeDocumentMoniker": "ActualizarDatos.xaml.cs",
@@ -190,8 +184,7 @@
               "RelativeToolTip": "ActualizarDatos.xaml.cs",
               "ViewState": "AgIAACMBAAAAAAAAAAAmwP4AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T08:17:19.472Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-10T08:17:19.472Z"
             }
           ]
         }

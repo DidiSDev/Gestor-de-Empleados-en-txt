@@ -8,6 +8,57 @@
         <ImageBrush ImageSource="./fondoForm.jpg" Stretch="UniformToFill" Opacity="0.8"/>
     </Window.Background>
 
+    <Window.Resources>
+        <!-- SOIMBREADO -->
+        <DropShadowEffect x:Key="ShadowEffect" BlurRadius="10" ShadowDepth="5" Opacity="0.5" Color="Black" />
+
+        <!-- HOVER A LOS TEXTBOX -->
+        <Style TargetType="TextBox">
+            <Setter Property="Effect" Value="{StaticResource ShadowEffect}"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="LightGray"/>
+                    <Setter Property="Effect">
+                        <Setter.Value>
+                            <DropShadowEffect BlurRadius="15" ShadowDepth="5" Opacity="0.7" Color="DarkGray"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- HOVER BOTON -->
+        <Style TargetType="Button">
+            <Setter Property="Effect" Value="{StaticResource ShadowEffect}"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="DarkOrange"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="Effect">
+                        <Setter.Value>
+                            <DropShadowEffect BlurRadius="15" ShadowDepth="7" Opacity="0.7" Color="DarkOrange"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- HOVER COMBOS -->
+        <Style TargetType="ComboBox">
+            <Setter Property="Effect" Value="{StaticResource ShadowEffect}"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="LightGray"/>
+                    <Setter Property="Effect">
+                        <Setter.Value>
+                            <DropShadowEffect BlurRadius="15" ShadowDepth="5" Opacity="0.7" Color="DarkGray"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
     <Viewbox Stretch="Uniform">
         <Border Background="#F5F5F5" Opacity="0.85" CornerRadius="15" Padding="20">
             <Grid Margin="20">
@@ -176,7 +227,7 @@
                             </Grid.ColumnDefinitions>
 
                             <TextBlock Text="Premios:" Grid.Row="0" Grid.Column="0" FontWeight="Bold" Margin="30" VerticalAlignment="Center" FontSize="12"/>
-                            <TextBox x:Name="txtPremios" Grid.Row="0" Grid.Column="1" Margin="10,30,0,30" Height="25" Width="600" HorizontalAlignment="Left"/>
+                            <TextBox x:Name="txtPremios" Grid.Row="0" Grid.Column="1" FontSize="16" Margin="10,30,0,30" Height="25" Width="600" HorizontalAlignment="Left"/>
                         </Grid>
 
                         <!-- BOTON ACTUALIZAR DATOS (RECUERDA PONER ESTILOS DIEGO) -->
